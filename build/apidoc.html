@@ -1,0 +1,1778 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/derickbailey/mustbe"
+
+    >mustbe (v0.4.0)</a>
+</h1>
+<h4>Authorization plumbing for Node+Express apps</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe">module mustbe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.activities">
+            function <span class="apidocSignatureSpan">mustbe.</span>activities
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.core">
+            function <span class="apidocSignatureSpan">mustbe.</span>core
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index">
+            function <span class="apidocSignatureSpan">mustbe.</span>index
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.parameter_map">
+            function <span class="apidocSignatureSpan">mustbe.</span>parameter_map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.registry">
+            function <span class="apidocSignatureSpan">mustbe.</span>registry
+            <span class="apidocSignatureSpan">(defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers">
+            function <span class="apidocSignatureSpan">mustbe.</span>route_helpers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user">
+            function <span class="apidocSignatureSpan">mustbe.</span>user
+            <span class="apidocSignatureSpan">(username, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.userIdentity">
+            function <span class="apidocSignatureSpan">mustbe.</span>userIdentity
+            <span class="apidocSignatureSpan">(user, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user_identity">
+            function <span class="apidocSignatureSpan">mustbe.</span>user_identity
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>activities.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>core.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>index.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>parameter_map.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>registry.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>route_helpers.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>userIdentity.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mustbe.</span>user_identity.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.activities">module mustbe.activities</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.activities.activities">
+            function <span class="apidocSignatureSpan">mustbe.</span>activities
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.activities.prototype">module mustbe.activities.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.activities.prototype.allow">
+            function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>allow
+            <span class="apidocSignatureSpan">(allower)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.activities.prototype.can">
+            function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>can
+            <span class="apidocSignatureSpan">(activity, validator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.activities.prototype.deny">
+            function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>deny
+            <span class="apidocSignatureSpan">(denier)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.core">module mustbe.core</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.core.core">
+            function <span class="apidocSignatureSpan">mustbe.</span>core
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.core.prototype">module mustbe.core.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.core.prototype.configure">
+            function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>configure
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.core.prototype.getIdentity">
+            function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>getIdentity
+            <span class="apidocSignatureSpan">(identityTypeName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.core.prototype.routeHelpers">
+            function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>routeHelpers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.index">module mustbe.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.index">
+            function <span class="apidocSignatureSpan">mustbe.</span>index
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.index.prototype">module mustbe.index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.prototype.activities">
+            function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>activities
+            <span class="apidocSignatureSpan">(identityTypeName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.prototype.addIdentity">
+            function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>addIdentity
+            <span class="apidocSignatureSpan">(identityTypeName, IdentityType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.prototype.getConfig">
+            function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>getConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.prototype.routeHelpers">
+            function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>routeHelpers
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.index.prototype.userIdentity">
+            function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>userIdentity
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.parameter_map">module mustbe.parameter_map</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.parameter_map.parameter_map">
+            function <span class="apidocSignatureSpan">mustbe.</span>parameter_map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.parameter_map.prototype">module mustbe.parameter_map.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.parameter_map.prototype.getMaps">
+            function <span class="apidocSignatureSpan">mustbe.parameter_map.prototype.</span>getMaps
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.parameter_map.prototype.map">
+            function <span class="apidocSignatureSpan">mustbe.parameter_map.prototype.</span>map
+            <span class="apidocSignatureSpan">(activity, mapper)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.registry">module mustbe.registry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.registry.registry">
+            function <span class="apidocSignatureSpan">mustbe.</span>registry
+            <span class="apidocSignatureSpan">(defaultValue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.registry.prototype">module mustbe.registry.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.registry.prototype.get">
+            function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>get
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.registry.prototype.hasValue">
+            function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>hasValue
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.registry.prototype.register">
+            function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>register
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.route_helpers">module mustbe.route_helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers.route_helpers">
+            function <span class="apidocSignatureSpan">mustbe.</span>route_helpers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.route_helpers.prototype">module mustbe.route_helpers.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers.prototype.getUser">
+            function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>getUser
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers.prototype.notAuthenticated">
+            function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>notAuthenticated
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers.prototype.notAuthorized">
+            function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>notAuthorized
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.route_helpers.prototype.parameterMaps">
+            function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>parameterMaps
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.user">module mustbe.user</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user.user">
+            function <span class="apidocSignatureSpan">mustbe.</span>user
+            <span class="apidocSignatureSpan">(username, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user.login">
+            function <span class="apidocSignatureSpan">mustbe.user.</span>login
+            <span class="apidocSignatureSpan">(username, password, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user.loginFromCookie">
+            function <span class="apidocSignatureSpan">mustbe.user.</span>loginFromCookie
+            <span class="apidocSignatureSpan">(cookie, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.userIdentity">module mustbe.userIdentity</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.userIdentity.userIdentity">
+            function <span class="apidocSignatureSpan">mustbe.</span>userIdentity
+            <span class="apidocSignatureSpan">(user, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.userIdentity.prototype">module mustbe.userIdentity.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.userIdentity.prototype.isAuthenticated">
+            function <span class="apidocSignatureSpan">mustbe.userIdentity.prototype.</span>isAuthenticated
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">mustbe.userIdentity.prototype.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.user_identity">module mustbe.user_identity</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user_identity.user_identity">
+            function <span class="apidocSignatureSpan">mustbe.</span>user_identity
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mustbe.user_identity.prototype">module mustbe.user_identity.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mustbe.user_identity.prototype.isAuthenticated">
+            function <span class="apidocSignatureSpan">mustbe.user_identity.prototype.</span>isAuthenticated
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe" id="apidoc.module.mustbe">module mustbe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.activities" id="apidoc.element.mustbe.activities">
+        function <span class="apidocSignatureSpan">mustbe.</span>activities
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Activities(){
+  this.config = {
+    validators: {}
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // what do we do when the user is not authorized?
+  rh.notAuthorized(function(req, res, next){
+    res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+  });
+});
+
+config.<span class="apidocCodeKeywordSpan">activities</span>(function(activities){
+  // configure an activity with an authorization check
+  activities.can(&#x22;view thing&#x22;, function(identity, params, cb){
+    var id = params[&#x22;id&#x22;];
+    someLib.anotherThing(id, function(err, thing){
+      if (err) { return cb(err); }
+      var hasThing = !!thing;
+      cb(null, hasThing);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.core" id="apidoc.element.mustbe.core">
+        function <span class="apidocSignatureSpan">mustbe.</span>core
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MustBe(){
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index" id="apidoc.element.mustbe.index">
+        function <span class="apidocSignatureSpan">mustbe.</span>index
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Configurator(){
+  var that = this;
+  var defaultActivities = new ActivityConfig();
+  this.activityRegistry = new Registry(defaultActivities);
+  this.identityRegistry = new Registry();
+  this.routeHelpersConfig = new RouteHelperConfig();
+  this.userIdentityConfig = new UserIdentityConfig();
+
+  this.defaultIdentityType = &#x22;user&#x22;;
+  this.config = {
+    routeHelpers: this.routeHelpersConfig.config,
+    userIdentity: this.userIdentityConfig.config,
+    validators: {},
+    activities: this.activityRegistry,
+    identities: this.identityRegistry,
+    getActivities: function(identityTypeName){
+      var activitiesConfig = that.activityRegistry.get(identityTypeName);
+      var activities;
+      if (activitiesConfig) {
+        activities = activitiesConfig.config;
+      }
+      return activities;
+    },
+    getIdentity: function(identityTypeName){
+      return that.identityRegistry.get(identityTypeName);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.parameter_map" id="apidoc.element.mustbe.parameter_map">
+        function <span class="apidocSignatureSpan">mustbe.</span>parameter_map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ParameterMap(){
+  this.maps = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.registry" id="apidoc.element.mustbe.registry">
+        function <span class="apidocSignatureSpan">mustbe.</span>registry
+        <span class="apidocSignatureSpan">(defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Registry(defaultValue){
+  this._defaultValue = defaultValue;
+  this._values = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers" id="apidoc.element.mustbe.route_helpers">
+        function <span class="apidocSignatureSpan">mustbe.</span>route_helpers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RouteHelpers(){
+  this.config = {
+    validators: {},
+    getUser: noGetUser,
+    parameterMaps: {}
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user" id="apidoc.element.mustbe.user">
+        function <span class="apidocSignatureSpan">mustbe.</span>user
+        <span class="apidocSignatureSpan">(username, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function User(username, password){
+  this.username = username;
+  this.password = password;
+  this.roles = [];
+
+  if (username === &#x22;admin&#x22;){
+    this.roles.push(&#x22;admin&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.userIdentity" id="apidoc.element.mustbe.userIdentity">
+        function <span class="apidocSignatureSpan">mustbe.</span>userIdentity
+        <span class="apidocSignatureSpan">(user, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UserIdentity(user, config){
+  this.user = user;
+  this.config = config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+
+    rh.notAuthenticated(function(req, res, next){
+res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+    });
+  });
+
+  config.<span class="apidocCodeKeywordSpan">userIdentity</span>(function(id){
+    id.isAuthenticated(function(user, cb){
+
+// you may have real logic here to check if someone
+// is logged in or not. maybe this hits a database
+// or does something else...
+var isAuthenticated = !!user;
+return cb(null, isAuthenticated);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user_identity" id="apidoc.element.mustbe.user_identity">
+        function <span class="apidocSignatureSpan">mustbe.</span>user_identity
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UserIdentity(){
+  this.config = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.activities" id="apidoc.module.mustbe.activities">module mustbe.activities</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.activities.activities" id="apidoc.element.mustbe.activities.activities">
+        function <span class="apidocSignatureSpan">mustbe.</span>activities
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Activities(){
+  this.config = {
+    validators: {}
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // what do we do when the user is not authorized?
+  rh.notAuthorized(function(req, res, next){
+    res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+  });
+});
+
+config.<span class="apidocCodeKeywordSpan">activities</span>(function(activities){
+  // configure an activity with an authorization check
+  activities.can(&#x22;view thing&#x22;, function(identity, params, cb){
+    var id = params[&#x22;id&#x22;];
+    someLib.anotherThing(id, function(err, thing){
+      if (err) { return cb(err); }
+      var hasThing = !!thing;
+      cb(null, hasThing);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.activities.prototype" id="apidoc.module.mustbe.activities.prototype">module mustbe.activities.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.activities.prototype.allow" id="apidoc.element.mustbe.activities.prototype.allow">
+        function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>allow
+        <span class="apidocSignatureSpan">(allower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allow = function (allower){
+  this.config.allower = allower;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.activities.prototype.can" id="apidoc.element.mustbe.activities.prototype.can">
+        function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>can
+        <span class="apidocSignatureSpan">(activity, validator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">can = function (activity, validator){
+  this.config.validators[activity] = validator;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  rh.notAuthorized(function(req, res, next){
+    res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+  });
+});
+
+config.activities(function(activities){
+  // configure an activity with an authorization check
+  activities.<span class="apidocCodeKeywordSpan">can</span>(&#x22;view thing&#x22;, function(identity, params, cb){
+    var id = params[&#x22;id&#x22;];
+    someLib.anotherThing(id, function(err, thing){
+      if (err) { return cb(err); }
+      var hasThing = !!thing;
+      cb(null, hasThing);
+    });
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.activities.prototype.deny" id="apidoc.element.mustbe.activities.prototype.deny">
+        function <span class="apidocSignatureSpan">mustbe.activities.prototype.</span>deny
+        <span class="apidocSignatureSpan">(denier)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deny = function (denier){
+  this.config.denier = denier;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.core" id="apidoc.module.mustbe.core">module mustbe.core</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.core.core" id="apidoc.element.mustbe.core.core">
+        function <span class="apidocSignatureSpan">mustbe.</span>core
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MustBe(){
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.core.prototype" id="apidoc.module.mustbe.core.prototype">module mustbe.core.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.core.prototype.configure" id="apidoc.element.mustbe.core.prototype.configure">
+        function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>configure
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (cb){
+  var configurator = new Configurator();
+  cb(configurator);
+  this.config = configurator.getConfig();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exported from the config module.
+
+```js
+// app.js
+
+var mustBe = require(&#x22;mustbe&#x22;);
+var mustBeConfig = require(&#x22;./mustbe-config&#x22;);
+mustBe.<span class="apidocCodeKeywordSpan">configure</span>(mustBeConfig);
+```
+
+### Create The Configuration
+
+Now you can create a `mustbe-config.js` file for your application.
+Having the config file separate from the `app.js` bootstrapper
+file helps to keep things clean.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.core.prototype.getIdentity" id="apidoc.element.mustbe.core.prototype.getIdentity">
+        function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>getIdentity
+        <span class="apidocSignatureSpan">(identityTypeName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getIdentity = function (identityTypeName){
+  var IdentityType = this.config.getIdentity(identityTypeName);
+  if (!IdentityType){
+    var noIdErr = new Error(&#x22;Identity Not Found, &#x22; + identityTypeName);
+    noIdErr.name = &#x22;IdentityNotFoundException&#x22;;
+    throw noIdErr;
+  }
+  return new IdentityType(this.config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+MustBe.prototype.routeHelpers = function(){
+  var routeHelpers = new RouteHelpers(this.config);
+  return routeHelpers;
+};
+
+MustBe.prototype.getIdentity = function(identityTypeName){
+  var IdentityType = this.config.<span class="apidocCodeKeywordSpan">getIdentity</span>(identityTypeName);
+  if (!IdentityType){
+    var noIdErr = new Error(&#x22;Identity Not Found, &#x22; + identityTypeName);
+    noIdErr.name = &#x22;IdentityNotFoundException&#x22;;
+    throw noIdErr;
+  }
+  return new IdentityType(this.config);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.core.prototype.routeHelpers" id="apidoc.element.mustbe.core.prototype.routeHelpers">
+        function <span class="apidocSignatureSpan">mustbe.core.prototype.</span>routeHelpers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeHelpers = function (){
+  var routeHelpers = new RouteHelpers(this.config);
+  return routeHelpers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Here is a basic configuration example from which you can start:
+
+```js
+// ./mustbe-config.js
+var mustBe = require(&#x22;mustbe&#x22;);
+module.exports = function(config){
+
+  config.<span class="apidocCodeKeywordSpan">routeHelpers</span>(function(rh){
+// get the current user from the request object
+rh.getUser(function(req, cb){
+  // return cb(err); if there is an error
+  cb(null, req.user);
+});
+
+// what do we do when the user is not authorized?
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.index" id="apidoc.module.mustbe.index">module mustbe.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.index" id="apidoc.element.mustbe.index.index">
+        function <span class="apidocSignatureSpan">mustbe.</span>index
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Configurator(){
+  var that = this;
+  var defaultActivities = new ActivityConfig();
+  this.activityRegistry = new Registry(defaultActivities);
+  this.identityRegistry = new Registry();
+  this.routeHelpersConfig = new RouteHelperConfig();
+  this.userIdentityConfig = new UserIdentityConfig();
+
+  this.defaultIdentityType = &#x22;user&#x22;;
+  this.config = {
+    routeHelpers: this.routeHelpersConfig.config,
+    userIdentity: this.userIdentityConfig.config,
+    validators: {},
+    activities: this.activityRegistry,
+    identities: this.identityRegistry,
+    getActivities: function(identityTypeName){
+      var activitiesConfig = that.activityRegistry.get(identityTypeName);
+      var activities;
+      if (activitiesConfig) {
+        activities = activitiesConfig.config;
+      }
+      return activities;
+    },
+    getIdentity: function(identityTypeName){
+      return that.identityRegistry.get(identityTypeName);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.index.prototype" id="apidoc.module.mustbe.index.prototype">module mustbe.index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.prototype.activities" id="apidoc.element.mustbe.index.prototype.activities">
+        function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>activities
+        <span class="apidocSignatureSpan">(identityTypeName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">activities = function (identityTypeName, cb){
+  if (!cb) {
+    cb = identityTypeName;
+    identityTypeName = this.defaultIdentityType;
+  }
+
+  var activityConfig;
+  if (this.activityRegistry.hasValue(identityTypeName)){
+    activityConfig = this.activityRegistry.get(identityTypeName);
+  } else {
+    activityConfig = new ActivityConfig();
+    this.activityRegistry.register(identityTypeName, activityConfig);
+  }
+
+  cb(activityConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // what do we do when the user is not authorized?
+  rh.notAuthorized(function(req, res, next){
+    res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+  });
+});
+
+config.<span class="apidocCodeKeywordSpan">activities</span>(function(activities){
+  // configure an activity with an authorization check
+  activities.can(&#x22;view thing&#x22;, function(identity, params, cb){
+    var id = params[&#x22;id&#x22;];
+    someLib.anotherThing(id, function(err, thing){
+      if (err) { return cb(err); }
+      var hasThing = !!thing;
+      cb(null, hasThing);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.prototype.addIdentity" id="apidoc.element.mustbe.index.prototype.addIdentity">
+        function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>addIdentity
+        <span class="apidocSignatureSpan">(identityTypeName, IdentityType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addIdentity = function (identityTypeName, IdentityType){
+  this.identityRegistry.register(identityTypeName, IdentityType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.prototype.getConfig" id="apidoc.element.mustbe.index.prototype.getConfig">
+        function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>getConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function (){
+  return this.config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Methods
+// -------
+
+MustBe.prototype.configure = function(cb){
+  var configurator = new Configurator();
+  cb(configurator);
+  this.config = configurator.<span class="apidocCodeKeywordSpan">getConfig</span>();
+};
+
+MustBe.prototype.routeHelpers = function(){
+  var routeHelpers = new RouteHelpers(this.config);
+  return routeHelpers;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.prototype.routeHelpers" id="apidoc.element.mustbe.index.prototype.routeHelpers">
+        function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>routeHelpers
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeHelpers = function (cb){
+  cb(this.routeHelpersConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Here is a basic configuration example from which you can start:
+
+```js
+// ./mustbe-config.js
+var mustBe = require(&#x22;mustbe&#x22;);
+module.exports = function(config){
+
+  config.<span class="apidocCodeKeywordSpan">routeHelpers</span>(function(rh){
+// get the current user from the request object
+rh.getUser(function(req, cb){
+  // return cb(err); if there is an error
+  cb(null, req.user);
+});
+
+// what do we do when the user is not authorized?
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.index.prototype.userIdentity" id="apidoc.element.mustbe.index.prototype.userIdentity">
+        function <span class="apidocSignatureSpan">mustbe.index.prototype.</span>userIdentity
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">userIdentity = function (cb){
+  cb(this.userIdentityConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+
+    rh.notAuthenticated(function(req, res, next){
+res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+    });
+  });
+
+  config.<span class="apidocCodeKeywordSpan">userIdentity</span>(function(id){
+    id.isAuthenticated(function(user, cb){
+
+// you may have real logic here to check if someone
+// is logged in or not. maybe this hits a database
+// or does something else...
+var isAuthenticated = !!user;
+return cb(null, isAuthenticated);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.parameter_map" id="apidoc.module.mustbe.parameter_map">module mustbe.parameter_map</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.parameter_map.parameter_map" id="apidoc.element.mustbe.parameter_map.parameter_map">
+        function <span class="apidocSignatureSpan">mustbe.</span>parameter_map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ParameterMap(){
+  this.maps = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.parameter_map.prototype" id="apidoc.module.mustbe.parameter_map.prototype">module mustbe.parameter_map.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.parameter_map.prototype.getMaps" id="apidoc.element.mustbe.parameter_map.prototype.getMaps">
+        function <span class="apidocSignatureSpan">mustbe.parameter_map.prototype.</span>getMaps
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMaps = function (){
+  return this.maps;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+RouteHelpers.prototype.notAuthorized = function(cb){
+  this.config.notAuthorized = cb;
+};
+
+RouteHelpers.prototype.parameterMaps = function(cb){
+  var parameterMap = new ParameterMap();
+  cb(parameterMap);
+  this.config.parameterMaps = parameterMap.<span class="apidocCodeKeywordSpan">getMaps</span>();
+};
+
+// Exports
+// -------
+
+module.exports = RouteHelpers;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.parameter_map.prototype.map" id="apidoc.element.mustbe.parameter_map.prototype.map">
+        function <span class="apidocSignatureSpan">mustbe.parameter_map.prototype.</span>map
+        <span class="apidocSignatureSpan">(activity, mapper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (activity, mapper){
+  this.maps[activity] = mapper;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.registry" id="apidoc.module.mustbe.registry">module mustbe.registry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.registry.registry" id="apidoc.element.mustbe.registry.registry">
+        function <span class="apidocSignatureSpan">mustbe.</span>registry
+        <span class="apidocSignatureSpan">(defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Registry(defaultValue){
+  this._defaultValue = defaultValue;
+  this._values = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.registry.prototype" id="apidoc.module.mustbe.registry.prototype">module mustbe.registry.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.registry.prototype.get" id="apidoc.element.mustbe.registry.prototype.get">
+        function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>get
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (name){
+  var value;
+  if (this.hasValue(name)){
+    value = this._values[name];
+  } else {
+    value = this._defaultValue;
+  }
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Now you can run the `mustBe` functions on your routes.
+
+```js
+var mustbe = require(&#x22;mustbe&#x22;).routeHelpers();
+var express = require(&#x22;express&#x22;);
+
+var router = express.Router();
+router.<span class="apidocCodeKeywordSpan">get</span>(&#x22;/:id&#x22;, mustBe.authorized(&#x22;view thing&#x22;), view);
+
+function view(req, res, next){
+  res.render(&#x22;/something&#x22;);
+}
+```
+
+Be sure to read the full documentation, linked above, for the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.registry.prototype.hasValue" id="apidoc.element.mustbe.registry.prototype.hasValue">
+        function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>hasValue
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasValue = function (name){
+  return Object.prototype.hasOwnProperty.call(this._values, name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Registry.prototype.register = function(name, value){
+  this._values[name] = value;
+};
+
+Registry.prototype.get = function(name){
+  var value;
+  if (this.<span class="apidocCodeKeywordSpan">hasValue</span>(name)){
+    value = this._values[name];
+  } else {
+    value = this._defaultValue;
+  }
+  return value;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.registry.prototype.register" id="apidoc.element.mustbe.registry.prototype.register">
+        function <span class="apidocSignatureSpan">mustbe.registry.prototype.</span>register
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (name, value){
+  this._values[name] = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Configurator.prototype.userIdentity = function(cb){
+cb(this.userIdentityConfig);
+};
+
+Configurator.prototype.addIdentity = function(identityTypeName, IdentityType){
+this.identityRegistry.<span class="apidocCodeKeywordSpan">register</span>(identityTypeName, IdentityType);
+};
+
+Configurator.prototype.activities = function(identityTypeName, cb){
+if (!cb) {
+  cb = identityTypeName;
+  identityTypeName = this.defaultIdentityType;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.route_helpers" id="apidoc.module.mustbe.route_helpers">module mustbe.route_helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers.route_helpers" id="apidoc.element.mustbe.route_helpers.route_helpers">
+        function <span class="apidocSignatureSpan">mustbe.</span>route_helpers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RouteHelpers(){
+  this.config = {
+    validators: {},
+    getUser: noGetUser,
+    parameterMaps: {}
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.route_helpers.prototype" id="apidoc.module.mustbe.route_helpers.prototype">module mustbe.route_helpers.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers.prototype.getUser" id="apidoc.element.mustbe.route_helpers.prototype.getUser">
+        function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>getUser
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUser = function (cb){
+  this.config.getUser = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// ./mustbe-config.js
+var mustBe = require(&#x22;mustbe&#x22;);
+module.exports = function(config){
+
+  config.routeHelpers(function(rh){
+// get the current user from the request object
+rh.<span class="apidocCodeKeywordSpan">getUser</span>(function(req, cb){
+  // return cb(err); if there is an error
+  cb(null, req.user);
+});
+
+// what do we do when the user is not authorized?
+rh.notAuthorized(function(req, res, next){
+  res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers.prototype.notAuthenticated" id="apidoc.element.mustbe.route_helpers.prototype.notAuthenticated">
+        function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>notAuthenticated
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notAuthenticated = function (cb){
+  this.config.notAuthenticated = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+  });
+
+  rh.notAuthorized(function(req, res, next){
+    res.redirect(&#x22;/?alert=you are not authorized!&#x22;);
+  });
+
+  rh.<span class="apidocCodeKeywordSpan">notAuthenticated</span>(function(req, res, next){
+    res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+  });
+});
+
+config.userIdentity(function(id){
+  id.isAuthenticated(function(user, cb){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers.prototype.notAuthorized" id="apidoc.element.mustbe.route_helpers.prototype.notAuthorized">
+        function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>notAuthorized
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notAuthorized = function (cb){
+  this.config.notAuthorized = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // get the current user from the request object
+  rh.getUser(function(req, cb){
+    // return cb(err); if there is an error
+    cb(null, req.user);
+  });
+
+  // what do we do when the user is not authorized?
+  rh.<span class="apidocCodeKeywordSpan">notAuthorized</span>(function(req, res, next){
+    res.redirect(&#x22;/login?msg=you are not authorized&#x22;);
+  });
+});
+
+config.activities(function(activities){
+  // configure an activity with an authorization check
+  activities.can(&#x22;view thing&#x22;, function(identity, params, cb){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.route_helpers.prototype.parameterMaps" id="apidoc.element.mustbe.route_helpers.prototype.parameterMaps">
+        function <span class="apidocSignatureSpan">mustbe.route_helpers.prototype.</span>parameterMaps
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parameterMaps = function (cb){
+  var parameterMap = new ParameterMap();
+  cb(parameterMap);
+  this.config.parameterMaps = parameterMap.getMaps();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.user" id="apidoc.module.mustbe.user">module mustbe.user</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user.user" id="apidoc.element.mustbe.user.user">
+        function <span class="apidocSignatureSpan">mustbe.</span>user
+        <span class="apidocSignatureSpan">(username, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function User(username, password){
+  this.username = username;
+  this.password = password;
+  this.roles = [];
+
+  if (username === &#x22;admin&#x22;){
+    this.roles.push(&#x22;admin&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user.login" id="apidoc.element.mustbe.user.login">
+        function <span class="apidocSignatureSpan">mustbe.user.</span>login
+        <span class="apidocSignatureSpan">(username, password, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">login = function (username, password, cb){
+  // this is where you would have real logic to log the user in
+  // using a database or whatever other service you want
+  var user;
+  if (username) {
+    user = new User(username, password);
+  }
+  cb(null, user);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user.loginFromCookie" id="apidoc.element.mustbe.user.loginFromCookie">
+        function <span class="apidocSignatureSpan">mustbe.user.</span>loginFromCookie
+        <span class="apidocSignatureSpan">(cookie, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loginFromCookie = function (cookie, cb){
+  // this would involve database logic to convert a cookie id
+  // in to a user object, most likely. i&#x27;m just hard coding it
+  // for demo purposes
+  var user;
+  if (cookie) {
+    user = new User(cookie);
+  }
+  cb(null, user);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  config.routeHelpers(function(rh){
+rh.getUser(function(req, cb){
+
+  // this may involve database code or other
+  // things... in this case, a user object
+  var userCookie = req.cookies[&#x22;usercookie&#x22;];
+  User.<span class="apidocCodeKeywordSpan">loginFromCookie</span>(userCookie, function(err, user){
+    cb(null, user);
+  });
+});
+
+rh.notAuthorized(function(req, res, next){
+  res.redirect(&#x22;/?alert=you are not authorized!&#x22;);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.userIdentity" id="apidoc.module.mustbe.userIdentity">module mustbe.userIdentity</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.userIdentity.userIdentity" id="apidoc.element.mustbe.userIdentity.userIdentity">
+        function <span class="apidocSignatureSpan">mustbe.</span>userIdentity
+        <span class="apidocSignatureSpan">(user, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UserIdentity(user, config){
+  this.user = user;
+  this.config = config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+
+    rh.notAuthenticated(function(req, res, next){
+res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+    });
+  });
+
+  config.<span class="apidocCodeKeywordSpan">userIdentity</span>(function(id){
+    id.isAuthenticated(function(user, cb){
+
+// you may have real logic here to check if someone
+// is logged in or not. maybe this hits a database
+// or does something else...
+var isAuthenticated = !!user;
+return cb(null, isAuthenticated);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.userIdentity.prototype" id="apidoc.module.mustbe.userIdentity.prototype">module mustbe.userIdentity.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.userIdentity.prototype.isAuthenticated" id="apidoc.element.mustbe.userIdentity.prototype.isAuthenticated">
+        function <span class="apidocSignatureSpan">mustbe.userIdentity.prototype.</span>isAuthenticated
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAuthenticated = function (cb){
+  var user = this.user;
+  var isAuth = this.config.userIdentity.isAuthenticated;
+  return isAuth.call(this, user, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    rh.notAuthenticated(function(req, res, next){
+res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+    });
+  });
+
+  config.userIdentity(function(id){
+    id.<span class="apidocCodeKeywordSpan">isAuthenticated</span>(function(user, cb){
+
+// you may have real logic here to check if someone
+// is logged in or not. maybe this hits a database
+// or does something else...
+var isAuthenticated = !!user;
+return cb(null, isAuthenticated);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.user_identity" id="apidoc.module.mustbe.user_identity">module mustbe.user_identity</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user_identity.user_identity" id="apidoc.element.mustbe.user_identity.user_identity">
+        function <span class="apidocSignatureSpan">mustbe.</span>user_identity
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UserIdentity(){
+  this.config = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mustbe.user_identity.prototype" id="apidoc.module.mustbe.user_identity.prototype">module mustbe.user_identity.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mustbe.user_identity.prototype.isAuthenticated" id="apidoc.element.mustbe.user_identity.prototype.isAuthenticated">
+        function <span class="apidocSignatureSpan">mustbe.user_identity.prototype.</span>isAuthenticated
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAuthenticated = function (cb){
+  this.config.isAuthenticated = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    rh.notAuthenticated(function(req, res, next){
+res.redirect(&#x22;/?alert=you must log in first!&#x22;);
+    });
+  });
+
+  config.userIdentity(function(id){
+    id.<span class="apidocCodeKeywordSpan">isAuthenticated</span>(function(user, cb){
+
+// you may have real logic here to check if someone
+// is logged in or not. maybe this hits a database
+// or does something else...
+var isAuthenticated = !!user;
+return cb(null, isAuthenticated);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
